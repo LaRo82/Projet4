@@ -40,9 +40,11 @@ abstract class DAO
 
     protected function createQuery($sql, $parameters = null)
     {
+
         if($parameters)
         {
             $result = $this->checkConnection()->prepare($sql);
+
             $result->execute($parameters);
             return $result;
         }
