@@ -1,7 +1,44 @@
 <?php $this->title = 'Accueil'; ?>
+    <!-- Page Header -->
+    <header class="masthead" style="background-image: url('img/home-bg.jpg')">
+        <div class="overlay"></div>
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 col-md-10 mx-auto">
+                    <div class="site-heading">
+                        <h1>M. Forteroche</h1>
+                        <span class="subheading">Bienvenue sur mon blog</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8 col-md-10 mx-auto">
+        <?php
+        foreach ($articles as $article)
+        {
+            ?>
+          <div class="post-preview">
+              <a href="post.html">
+                  <h2 class="post-title">
+                      <a href="../public/index.php?route=article&articleId=<?= htmlspecialchars($article->getId());?>"><?= htmlspecialchars($article->getTitle());?></a>
+                  </h2>
+                  <p>
+                      <?= htmlspecialchars($article->getContent());?>
+                  </p>
+              </a>
+              <p class="post-meta">Créé le : <?= htmlspecialchars($article->getCreatedAt());?></p>
+          </div>
+            <?php
+        }
+        ?>
+          <hr>
+      </div>
+    </div>
+  </div>
 
-    <h1>Mon blog</h1>
-    <p>En construction</p>
 <?= $this->session->show('add_article'); ?>
 <?= $this->session->show('edit_article'); ?>
 <?= $this->session->show('delete_article'); ?>
@@ -25,20 +62,8 @@ if ($this->session->get('pseudo')) {
 } else {
     ?>
     <a href="../public/index.php?route=register">Inscription</a>
-    <a href="../public/index.php?route=login">Connexion</a>
     <?php
 }
 ?>
-<?php
-foreach ($articles as $article)
-{
-    ?>
-    <div>
-        <h2><a href="../public/index.php?route=article&articleId=<?= htmlspecialchars($article->getId());?>"><?= htmlspecialchars($article->getTitle());?></a></h2>
-        <p><?= htmlspecialchars($article->getContent());?></p>
-        <p>Créé le : <?= htmlspecialchars($article->getCreatedAt());?></p>
-    </div>
-    <br>
-    <?php
-}
-?>
+
+

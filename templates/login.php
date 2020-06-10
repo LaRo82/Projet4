@@ -1,8 +1,7 @@
 <?php $this->title = "Connexion"; ?>
-<h1>Mon blog</h1>
-<p>En construction</p>
 <?= $this->session->show('error_login'); ?>
 <div>
+    <p>Remplissez les champs ci-dessous pour vous connecter</p>
     <form method="post" action="../public/index.php?route=login">
         <label for="pseudo">Pseudo</label><br>
         <input type="text" id="pseudo" name="pseudo" value="<?= isset($post) ? htmlspecialchars($post->get('pseudo')): ''; ?>"><br>
