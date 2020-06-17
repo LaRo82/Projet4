@@ -1,6 +1,16 @@
 <?php $this->title = 'Article'; ?>
-<h1>Mon blog</h1>
-<p>En construction</p>
+<header class="masthead" style="background-image: url('img/typewriter_white.jpg')">
+    <div class="overlay"></div>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-md-10 mx-auto">
+                <div class="site-heading">
+                    <h1>Billet simple pour l'Alaska</h1>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
 <div>
     <h2><?= htmlspecialchars($article->getTitle());?></h2>
     <p><?= htmlspecialchars($article->getContent());?></p>

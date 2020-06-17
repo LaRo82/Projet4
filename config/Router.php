@@ -70,9 +70,9 @@ class Router
                     $this->backController->deleteAccount();
                 }
                 elseif($route === 'deleteUser'){
-                    $this->backController->deleteUser($this->request->getGet()->get('userId'));
+                    $thi->backController->deleteUser($this->request->getGet()->get('userId'));
                 }
-                elseif ($route === 'administration'){
+                elseif($route === 'administration'){
                     $this->backController->administration();
                 }
                 else{
