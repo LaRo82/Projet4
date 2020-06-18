@@ -31,7 +31,7 @@
                           <a href="../public/index.php?route=article&articleId=<?= htmlspecialchars($article->getId());?>"><?= htmlspecialchars($article->getTitle());?></a>
                       </h3>
                       <p>
-                          <?= htmlspecialchars($article->getContent());?>
+                          <?= $article->getContent();?>
                       </p>
                   </a>
                   <p class="post-meta">Créé le : <?= htmlspecialchars($article->getCreatedAt());?></p>
@@ -57,7 +57,7 @@
 <?php
 if ($this->session->get('pseudo')) {
     ?>
-    <a href="../public/index.php?route=logout">Déconnexion</a><br>
+
     <a href="../public/index.php?route=profile">Profil</a><br>
     <?php if($this->session->get('role') === 'admin') { ?>
         <a href="../public/index.php?route=administration">Administration</a><br>

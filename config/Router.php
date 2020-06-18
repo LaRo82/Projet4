@@ -70,10 +70,13 @@ class Router
                     $this->backController->deleteAccount();
                 }
                 elseif($route === 'deleteUser'){
-                    $thi->backController->deleteUser($this->request->getGet()->get('userId'));
+                    $this->backController->deleteUser($this->request->getGet()->get('userId'));
                 }
                 elseif($route === 'administration'){
                     $this->backController->administration();
+                }
+                elseif($route === 'bio'){
+                    $this->frontController->bio();
                 }
                 else{
                     $this->errorController->errorNotFound();

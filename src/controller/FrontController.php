@@ -92,4 +92,8 @@ class FrontController extends Controller
         }
         return $this->view->render('login');
     }
+
+    public function bio(){
+        return $this->view->render('bio');
+    }
 }

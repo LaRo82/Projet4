@@ -26,16 +26,28 @@
         <div class="collapse navbar-collapse" id="navbarResponsive">
             <ul class="navbar-nav ml-auto">
                 <li class="nav-item">
-                    <a class="nav-link" href="../public/index.php?route=about.php">Bio</a>
+                    <a class="nav-link" href="../public/index.php?route=bio">Biographie</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="">Liste des billets</a>
                 </li>
+                <?php
+                if ($this->session->get('pseudo')) {
+                ?>
                 <li class="nav-item">
-                    <a class="nav-link" href="../public/index.php?route=login">Connexion</a>
+                    <a class="nav-link" href="../public/index.php?route=logout">Deconnexion</a>
                 </li>
+                <?php
+                }else{
+                    ?>
+                    <li class="nav-item">
+                        <a class="nav-link" href="../public/index.php?route=login">Connexion</a>
+                    </li>
+                <?php
+                }
+                ?>
                 <li class="nav-item">
-                    <a class="nav-link" href="contact.html">Contact</a>
+                    <a class="nav-link" href="contact.php">Contact</a>
                 </li>
             </ul>
         </div>

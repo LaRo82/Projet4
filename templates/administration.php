@@ -1,15 +1,25 @@
 <?php $this->title = 'Administration'; ?>
 
-<h1>Mon blog</h1>
-<p>En construction</p>
 <?= $this->session->show('add_article'); ?>
 <?= $this->session->show('edit_article'); ?>
 <?= $this->session->show('delete_article'); ?>
 <?= $this->session->show('unflag_comment'); ?>
 <?= $this->session->show('delete_comment'); ?>
 <?= $this->session->show('delete_user'); ?>
+<header class="masthead" style="background-image: url('img/cogs.jpg')">
+    <div class="overlay"></div>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-md-10 mx-auto">
+                <div class="site-heading">
+                    <h1>Espace administration</h1>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
 <h2>Articles</h2>
-<a href="../public/index.php?route=addArticle">Nouvel article</a>
+<a href="../public/index.php?route=addArticle">Ecrire un nouvel article</a><hr>
 <table>
     <tr>
         <td>Id</td>
@@ -26,7 +36,7 @@
         <tr>
             <td><?= htmlspecialchars($article->getId());?></td>
             <td><a href="../public/index.php?route=article&articleId=<?= htmlspecialchars($article->getId());?>"><?= htmlspecialchars($article->getTitle());?></a></td>
-            <td><?= substr(htmlspecialchars($article->getContent()), 0, 150);?></td>
+            <td><?= substr($article->getContent(), 0, 150);?></td>
             <td><?= htmlspecialchars($article->getAuthor());?></td>
             <td>Créé le : <?= htmlspecialchars($article->getCreatedAt());?></td>
             <td>
