@@ -20,6 +20,19 @@ class ArticleDAO extends DAO
 
     public function getArticles()
     {
+        $sql = 'SELECT article.id, article.title, article.content, user.pseudo, article.createdAt FROM article INNER JOIN user ON article.user_id = user.id ORDER BY article.id DESC LiMIT 3';
+        $result = $this->createQuery($sql);
+        $articles = [];
+        foreach ($result as $row){
+            $articleId = $row['id'];
+            $articles[$articleId] = $this->buildObject($row);
+        }
+        $result->closeCursor();
+        return $articles;
+    }
+
+    public function getAllArticles()
+    {
         $sql = 'SELECT article.id, article.title, article.content, user.pseudo, article.createdAt FROM article INNER JOIN user ON article.user_id = user.id ORDER BY article.id DESC';
         $result = $this->createQuery($sql);
         $articles = [];

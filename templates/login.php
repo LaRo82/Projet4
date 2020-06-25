@@ -1,6 +1,7 @@
 <?php $this->title = "Connexion"; ?>
 <?= $this->session->show('error_login'); ?>
-<header class="masthead" style="background-image: url('img/letter.jpg')">
+<!-- Page Header -->
+<header class="masthead" style="background-image: url('img/computer.jpg')">
     <div class="overlay"></div>
     <div class="container">
         <div class="row">
@@ -12,10 +13,10 @@
         </div>
     </div>
 </header>
+<h3>Remplissez les champs ci-dessous pour vous connecter</h3><br>
 <div class="container">
     <div class="row">
         <div class="col-lg-8 col-md-10 mx-auto">
-            <p>Remplissez les champs ci-dessous pour vous connecter</p>
             <form method="post" id="contactForm" action="../public/index.php?route=login">
                 <div class="control-group">
                     <div class="form-group floating-label-form-group controls">

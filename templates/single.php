@@ -11,7 +11,7 @@
         </div>
     </div>
 </header>
-<div>
+<div class="container">
     <h2><?= htmlspecialchars($article->getTitle());?></h2>
     <p><?= $article->getContent();?></p>
     <p>Créé le : <?= htmlspecialchars($article->getCreatedAt());?></p>
@@ -19,12 +19,13 @@
 <br>
 <div class="actions">
     <a href="../public/index.php?route=editArticle&articleId=<?= $article->getId(); ?>">Modifier</a>
+    <br>
     <a href="../public/index.php?route=deleteArticle&articleId=<?= $article->getId(); ?>">Supprimer</a>
 </div>
 <br>
 <a href="../public/index.php">Retour à l'accueil</a>
+<hr>
 <div id="comments" class="text-left" style="margin-left: 50px">
-    <h3>Ajouter un commentaire</h3>
     <?php include('form_comment.php'); ?>
     <h3>Commentaires</h3>
     <?php

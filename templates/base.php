@@ -29,25 +29,48 @@
                     <a class="nav-link" href="../public/index.php?route=bio">Biographie</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="">Liste des billets</a>
+                    <a class="nav-link" href="../public/index.php?route=listArticles">Liste des billets</a>
                 </li>
                 <?php
-                if ($this->session->get('pseudo')) {
-                ?>
-                <li class="nav-item">
-                    <a class="nav-link" href="../public/index.php?route=logout">Deconnexion</a>
-                </li>
-                <?php
-                }else{
+                if ($this->session->get('pseudo') && $this->session->get('role') === 'admin') {
+                    ?>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            <?= $this->session->get('pseudo'); ?>
+                        </a>
+                        <div class="dropdown-menu">
+
+                            <a class="dropdown-item" href="../public/index.php?route=profile">Profil</a>
+                            <a class="dropdown-item" href="../public/index.php?route=addArticle">Nouvel article</a>
+                            <div class="dropdown-divider"></div>
+                            <a class="dropdown-item" href="../public/index.php?route=administration">Espace administration</a>
+                            <a class="dropdown-item" href="../public/index.php?route=logout">Déconnexion</a>
+                        </div>
+                    </li>
+                    <?php
+                }elseif ($this->session->get('pseudo') && $this->session->get('role') === 'user') {
+                    ?>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            <?= $this->session->get('pseudo'); ?>
+                        </a>
+                        <div class="dropdown-menu">
+                            <a class="dropdown-item" href="../public/index.php?route=profile">Profil</a>
+                            <div class="dropdown-divider"></div>
+                            <a class="dropdown-item" href="../public/index.php?route=logout">Déconnexion</a>
+                        </div>
+                    </li>
+                    <?php
+                }else {
                     ?>
                     <li class="nav-item">
                         <a class="nav-link" href="../public/index.php?route=login">Connexion</a>
                     </li>
-                <?php
+                    <?php
                 }
                 ?>
                 <li class="nav-item">
-                    <a class="nav-link" href="contact.php">Contact</a>
+                    <a class="nav-link" href="../public/index.php?route=contact">Contact</a>
                 </li>
             </ul>
         </div>

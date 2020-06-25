@@ -7,7 +7,7 @@ $submit = $route === 'addComment' ? 'Ajouter' : 'Mettre à jour';
 <div class="container">
     <div class="row">
         <div class="col-lg-8 col-md-10 mx-auto">
-            <p>Vous souhaitez réagir ? C'est ici que ça se passe...</p>
+            <h4>Vous souhaitez réagir ? C'est ici que ça se passe...</h4>
             <form method="post" name="sentMessage" id="contactForm" action="../public/index.php?route=<?= $route; ?>&articleId=<?= htmlspecialchars($article->getId()); ?>" >
                 <div class="control-group">
                     <div class="form-group floating-label-form-group controls">

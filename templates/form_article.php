@@ -15,7 +15,7 @@ $submit = $route === 'addArticle' ? 'Envoyer' : 'Mettre à jour';
     </div>
 </header>
 <head>
-    <script src="https://cdn.tiny.cloud/1/no-api-key/tinymce/5/tinymce.min.js" referrerpolicy="origin"></script>
+    <script src="https://cdn.tiny.cloud/1/g2tntjjfxzdvzqifmyk59pzmp0nqbwwqohpplepuhf81ud3v/tinymce/5/tinymce.min.js" referrerpolicy="origin"></script>
     <script>tinymce.init({selector:'textarea'});</script>
 </head>
 <div class="container">
@@ -36,7 +36,8 @@ $submit = $route === 'addArticle' ? 'Envoyer' : 'Mettre à jour';
                     <button type="submit" class="btn btn-primary" value="<?= $submit; ?>" id="submit" name="submit">Publier</button>
                 </div>
             </form><br>
-            <a href="../public/index.php">Retour à l'accueil</a>
+            <a href="../public/index.php">Retour à l'accueil</a><br>
+            <a href="../public/index.php?route=listArticles">Voir la liste des articles</a>
         </div>
     </div>
 </div>
