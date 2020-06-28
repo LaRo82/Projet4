@@ -1,3 +1,4 @@
+<?php $this->title = 'Formulaire d\'édition'; ?>
 <?php
 $route = isset($post) && $post->get('id') ? 'editArticle&articleId='.$post->get('id') : 'addArticle';
 $submit = $route === 'addArticle' ? 'Envoyer' : 'Mettre à jour';
@@ -16,6 +17,7 @@ $submit = $route === 'addArticle' ? 'Envoyer' : 'Mettre à jour';
 </header>
 
 <head>
+    <title>Formulaire d'édition</title>
     <script src="https://cdn.tiny.cloud/1/g2tntjjfxzdvzqifmyk59pzmp0nqbwwqohpplepuhf81ud3v/tinymce/5/tinymce.min.js" referrerpolicy="origin"></script>
     <script>tinymce.init({selector:'textarea'});</script>
 </head>

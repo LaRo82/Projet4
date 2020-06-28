@@ -12,7 +12,7 @@ $submit = $route === 'addComment' ? 'Ajouter' : 'Mettre à jour';
                 <div class="control-group">
                     <div class="form-group floating-label-form-group controls">
                         <label for="pseudo">Votre pseudo</label><br>
-                        <input type="text" id="name" class="form-control" name="pseudo" placeholder="Votre pseudo" value="<?= $this->session->get("pseudo") ?>" required ><br>
+                        <input type="text" title="pseudo" id="name" class="form-control" name="pseudo" placeholder="Votre pseudo" value="<?= $this->session->get("pseudo") ?>" required ><br>
                         <?= isset($errors['pseudo']) ? $errors['pseudo'] : ''; ?>
                     </div>
                 </div>
@@ -20,13 +20,13 @@ $submit = $route === 'addComment' ? 'Ajouter' : 'Mettre à jour';
                 <div class="control-group">
                     <div class="form-group floating-label-form-group controls">
                         <label for="content">Votre commentaire</label><br>
-                        <textarea rows="5" class="form-control" id="content" name="content" placeholder="Votre commentaire" required><?= isset($post) ? htmlspecialchars($post->get('content')): ''; ?></textarea><br>
+                        <textarea rows="5" title="comment" class="form-control" id="content" name="content" placeholder="Votre commentaire" required><?= isset($post) ? htmlspecialchars($post->get('content')): ''; ?></textarea><br>
                         <?= isset($errors['content']) ? $errors['content'] : ''; ?>
                     </div>
                     <div id="success"></div>
                     <br>
                     <div class="form-group">
-                        <input type="submit" class="btn btn-primary rounded" value="<?= $submit; ?>" id="submit" name="submit">
+                        <input type="submit" title="submit" class="btn btn-primary rounded" value="<?= $submit; ?>" id="submit" name="submit">
                     </div>
             </form>
         </div>

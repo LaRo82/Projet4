@@ -64,11 +64,9 @@ if ($this->session->show('login')) {
                   <hr>
                   <a href="post.html">
                       <h4 class="post-title">
-                          <a href="../public/index.php?route=article&articleId=<?= htmlspecialchars($article->getId());?>"><?= htmlspecialchars($article->getTitle());?></a>
+                          <a href="../public/index.php?route=article&articleId=<?= htmlspecialchars($article->getId()); ?>"><?= htmlspecialchars($article->getTitle()); ?></a>
                       </h4>
-
                           <?= $article->getContent();?>
-
                   </a>
                   <p class="post-meta">Créé le : <?= htmlspecialchars($article->getCreatedAt());?></p>
               </div>
