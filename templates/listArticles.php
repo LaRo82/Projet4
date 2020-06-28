@@ -6,6 +6,7 @@
         <div class="row">
             <div class="col-lg-8 col-md-10 mx-auto">
                 <div class="site-heading">
+                    <p>Mon dernier ouvrage</p>
                     <h1>Billet simple pour l'Alaska</h1>
                 </div>
             </div>
@@ -14,7 +15,7 @@
 </header>
 
 
-<h3 class="container text-center">Découvrez ici l'ensemble de mes publication de mon dernier ouvrage qui est un hommage à la solitude et aux grands espaces.</h3>
+<h3 class="container text-center">Vous trouverez ici l'ensemble des publication de mon dernier ouvrage qui est un hommage à la solitude et aux grands espaces. Je poste régulièrement mes inspirations en tenant compte de vos remarques faites en commentaire.</h3>
 <br>
 <div class="container">
     <div class="row">
