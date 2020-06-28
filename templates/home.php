@@ -16,29 +16,30 @@
     </div>
 </header>
 
-<div class="container align-content-center">
-<?= $this->session->show('add_article'); ?>
-<?= $this->session->show('edit_article'); ?>
-<?= $this->session->show('delete_article'); ?>
-<?= $this->session->show('add_comment'); ?>
-<?= $this->session->show('flag_comment'); ?>
-<?= $this->session->show('delete_comment'); ?>
-<?= $this->session->show('login'); ?>
-<?= $this->session->show('logout'); ?>
-<?= $this->session->show('delete_account'); ?>
-</div>
-
+<div class="container w-25 text-center">
 <?php
 if ($this->session->show('login')) {
     ?>
     <div class="alert alert-success" role="alert">
-        <?= $this->session->get('pseudo') ?>
+        <?= "Content de vous revoir "?><?= $this->session->get('pseudo'); ?><?=" !"?>
     </div>
     <?php
 }elseif ($this->session->show('logout')) {
     ?>
-    <div class="alert alert-success" role="alert">
-        <?= "A bienôt" .$this->session->get('pseudo'). "!" ?>
+    <div class="alert alert-secondary" role="alert">
+        <?="A bientôt"?><?= $this->session->get('pseudo'); ?><?=" !"?>
+    </div>
+    <?php
+}elseif ($this->session->get('register')) {
+    ?>
+    <div class="alert alert-warning" role="alert">
+        <?= $this->session->show('register') ?>
+    </div>
+    <?php
+}elseif ($this->session->get('delete_account')) {
+    ?>
+    <div class="alert alert-danger" role="alert">
+        <?= $this->session->show('delete_account') ?>
     </div>
     <?php
 }else{
@@ -46,10 +47,11 @@ if ($this->session->show('login')) {
     <?php
 }
 ?>
+</div>
 
 
 <br>
-<h2><em>Mes dernieres publications</em></h2>
+<h3><em>Découvrez mes dernieres publications</em></h3>
 <br>
 <div class="container">
     <div class="row">
@@ -61,9 +63,9 @@ if ($this->session->show('login')) {
               <div class="post-preview">
                   <hr>
                   <a href="post.html">
-                      <h3 class="post-title">
+                      <h4 class="post-title">
                           <a href="../public/index.php?route=article&articleId=<?= htmlspecialchars($article->getId());?>"><?= htmlspecialchars($article->getTitle());?></a>
-                      </h3>
+                      </h4>
 
                           <?= $article->getContent();?>
 

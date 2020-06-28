@@ -12,16 +12,9 @@
         </div>
     </div>
 </header>
-<?= $this->session->show('add_article'); ?>
-<?= $this->session->show('edit_article'); ?>
-<?= $this->session->show('delete_article'); ?>
-<?= $this->session->show('add_comment'); ?>
-<?= $this->session->show('flag_comment'); ?>
-<?= $this->session->show('delete_comment'); ?>
-<?= $this->session->show('login'); ?>
-<?= $this->session->show('logout'); ?>
-<?= $this->session->show('delete_account'); ?>
-<h2 class="container p-3 border border-info rounded">Découvrez ici l'ensemble de mes publication de mon dernier ouvrage qui est un hommage à la solitude et aux grands espaces.</h2>
+
+
+<h3 class="container text-center">Découvrez ici l'ensemble de mes publication de mon dernier ouvrage qui est un hommage à la solitude et aux grands espaces.</h3>
 <br>
 <div class="container">
     <div class="row">
@@ -33,9 +26,9 @@
                 <div class="post-preview">
                     <hr>
                     <a href="post.html">
-                        <h3 class="post-title">
+                        <h4 class="post-title">
                             <a href="../public/index.php?route=article&articleId=<?= htmlspecialchars($article->getId());?>"><?= htmlspecialchars($article->getTitle());?></a>
-                        </h3>
+                        </h4>
                         <p>
                             <?= $article->getContent();?>
                         </p>

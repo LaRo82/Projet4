@@ -1,5 +1,5 @@
 <?php $this->title = "Inscription"; ?>
-<!-- Page Header -->
+
 <header class="masthead" style="background-image: url('img/computer.jpg')">
     <div class="overlay"></div>
     <div class="container">
@@ -37,7 +37,7 @@
                 <br>
                 <div id="success"></div>
                 <div class="form-group">
-                    <button type="submit" class="btn btn-primary" value="Inscription" id="sendMessageButton" name="submit">Inscription</button>
+                    <button type="submit" class="btn btn-primary rounded" value="Inscription" id="sendMessageButton" name="submit">Inscription</button>
                 </div>
             </form><br>
             <a href="../public/index.php">Retour à l'accueil</a>

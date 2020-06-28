@@ -1,5 +1,4 @@
 <?php $this->title = "Connexion"; ?>
-<?= $this->session->show('error_login'); ?>
 <!-- Page Header -->
 <header class="masthead" style="background-image: url('img/computer.jpg')">
     <div class="overlay"></div>
@@ -13,6 +12,18 @@
         </div>
     </div>
 </header>
+
+<?php
+if ($this->session->show('error_login')){
+    ?>
+    <div class="container alert alert-danger w-25 text-center" role="alert">
+        Le pseudo ou le mot de passe sont incorrects<br>Veuillez réessayer
+    </div>
+<?php
+}else
+?>
+
+<br>S
 <h3>Remplissez les champs ci-dessous pour vous connecter</h3><br>
 <div class="container">
     <div class="row">
@@ -36,10 +47,10 @@
                 <br>
                 <div id="success"></div>
                 <div class="form-group">
-                    <button type="submit" class="btn btn-primary" value="Connexion" id="submit" name="submit">Connexion</button>
+                    <button type="submit" class="btn btn-primary rounded" value="Connexion" id="submit" name="submit">Connexion</button>
                 </div>
             </form><br>
-            <p>Pas encore de compte ? Cliquez <a href="../public/index.php?route=register">ici</a></p><hr>
+            <p>Pas encore de compte ? Cliquez <a class="btn-outline-danger" href="../public/index.php?route=register">ici</a></p><hr>
             <a href="../public/index.php">Retour à l'accueil</a>
         </div>
     </div>

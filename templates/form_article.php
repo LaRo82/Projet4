@@ -14,6 +14,7 @@ $submit = $route === 'addArticle' ? 'Envoyer' : 'Mettre à jour';
         </div>
     </div>
 </header>
+
 <head>
     <script src="https://cdn.tiny.cloud/1/g2tntjjfxzdvzqifmyk59pzmp0nqbwwqohpplepuhf81ud3v/tinymce/5/tinymce.min.js" referrerpolicy="origin"></script>
     <script>tinymce.init({selector:'textarea'});</script>
@@ -33,11 +34,22 @@ $submit = $route === 'addArticle' ? 'Envoyer' : 'Mettre à jour';
                     <textarea id="content" name="content" rows="8" cols="auto"><?= isset($post) ? htmlspecialchars($post->get('content')): ''; ?></textarea><br>
                     <?= isset($errors['content']) ? $errors['content'] : ''; ?>
                     <br>
-                    <button type="submit" class="btn btn-primary" value="<?= $submit; ?>" id="submit" name="submit">Publier</button>
+                    <button type="submit" class="btn btn-primary rounded" value="<?= $submit; ?>" id="submit" name="submit">Publier</button>
                 </div>
             </form><br>
-            <a href="../public/index.php">Retour à l'accueil</a><br>
-            <a href="../public/index.php?route=listArticles">Voir la liste des articles</a>
+            <div class="text-right">
+                <a class="btn btn-outline-secondary rounded" href="../public/index.php?route=listArticles">Voir la liste des articles</a>
+            </div>
         </div>
     </div>
 </div>
+<script>
+    tinymce.init({
+        selector: 'textarea',
+        plugins: 'a11ychecker advcode casechange formatpainter linkchecker autolink lists checklist media mediaembed pageembed permanentpen powerpaste table advtable tinycomments tinymcespellchecker',
+        toolbar: 'a11ycheck addcomment showcomments casechange checklist code formatpainter pageembed permanentpen table',
+        toolbar_mode: 'floating',
+        tinycomments_mode: 'embedded',
+        tinycomments_author: 'Author name',
+    });
+</script>

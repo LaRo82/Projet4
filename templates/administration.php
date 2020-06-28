@@ -13,25 +13,50 @@
     </div>
 </header>
 
-<?php
-if ($this->session->show('add_article') || $this->session->show('edit_article')){
-    ?>
-    <div class="alert alert-success" role="alert">
-        Article modifié avec succes
-    </div>
+<div class="container w-25 text-center">
     <?php
-}else{
+    if ($this->session->get('add_article')){
+        ?>
+        <div class="alert alert-success" role="alert">
+            <?= ($this->session->show('add_article')) ?>
+        </div>
+        <?php
+        }elseif ($this->session->get('delete_article')){
+        ?>
+        <div class="alert alert-warning" role="alert">
+            <?= ($this->session->show('delete_article')) ?>
+        </div>
+        <?php
+    }elseif ($this->session->get('edit_article')){
+        ?>
+        <div class="alert alert-success" role="alert">
+            <?= ($this->session->show('edit_article')) ?>
+        </div>
+        <?php
+    }elseif ($this->session->get('delete_comment')){
+        ?>
+        <div class="alert alert-danger" role="alert">
+            <?= ($this->session->show('delete_comment')) ?>
+        </div>
+        <?php
+    }elseif ($this->session->get('delete_user')){
+        ?>
+        <div class="alert alert-danger" role="alert">
+            <?= ($this->session->show('delete_user')) ?>
+        </div>
+        <?php
+    }elseif ($this->session->get('unflag_comment')){
+        ?>
+        <div class="alert alert-warning" role="alert">
+            <?= ($this->session->show('unflag_comment')) ?>
+        </div>
+        <?php
+    }else{
+        ?>
+        <?php
+    }
     ?>
-    <?php
-}
-?>
-
-<?= $this->session->show('add_article'); ?>
-<?= $this->session->show('edit_article'); ?>
-<?= $this->session->show('delete_article'); ?>
-<?= $this->session->show('unflag_comment'); ?>
-<?= $this->session->show('delete_comment'); ?>
-<?= $this->session->show('delete_user'); ?>
+</div>
 
 <h2>Articles</h2><hr>
 <a href="../public/index.php?route=addArticle"><button type="button" class="btn btn-outline-success rounded">Rédiger un nouvel article</button></a><hr>
@@ -51,7 +76,7 @@ if ($this->session->show('add_article') || $this->session->show('edit_article'))
         ?>
         <tr>
             <td class="align-middle"><a href="../public/index.php?route=article&articleId=<?= htmlspecialchars($article->getId());?>"><?= htmlspecialchars($article->getTitle());?></a></td>
-            <td class="align-middle"><?= substr($article->getContent(), 0, 200);?></td>
+            <td class="align-middle"><?= substr($article->getContent(), 0, 220);?></td>
             <td class="align-middle"><?= htmlspecialchars($article->getAuthor());?></td>
             <td class="align-middle">Créé le : <?= htmlspecialchars($article->getCreatedAt());?></td>
             <td class="align-middle">
@@ -64,7 +89,7 @@ if ($this->session->show('add_article') || $this->session->show('edit_article'))
     ?>
 </table>
 <hr>
-
+<br>
 <?php
 if (count($comments)>=1) {
 
@@ -101,11 +126,13 @@ if (count($comments)>=1) {
 <?php
 }else{
     ?>
-    <h2>Aucun commentaire n'a été signallé</h2>
+    <h2>Aucun commentaire n'a été signalé</h2>
 <?php
 }
 ?>
+<br>
 <hr>
+<br>
 
 <h2>Utilisateurs</h2>
 <table class="table">
