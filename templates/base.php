@@ -2,6 +2,7 @@
 <html lang="fr">
     <head>
         <meta charset="UTF-8"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
         <title><?= $title ?></title>
         <!-- Bootstrap core CSS -->
         <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
@@ -71,9 +72,6 @@
                         <?php
                     }
                     ?>
-                    <li class="nav-item">
-                        <a class="nav-link" href="../public/index.php?route=contact">Contact</a>
-                    </li>
                 </ul>
             </div>
         </div>

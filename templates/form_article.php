@@ -9,7 +9,11 @@ $submit = $route === 'addArticle' ? 'Envoyer' : 'Mettre à jour';
         <div class="row">
             <div class="col-lg-8 col-md-10 mx-auto">
                 <div class="site-heading">
-                    <h1>Nouvel article</h1>
+                    <?php if(isset($post)){
+                        echo'<h1>Editer un article</h1>';
+                    }else{
+                        echo'<h1>Nouvel article</h1>';
+                    } ?>
                 </div>
             </div>
         </div>

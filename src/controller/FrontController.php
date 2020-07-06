@@ -97,11 +97,6 @@ class FrontController extends Controller
         return $this->view->render('bio');
     }
 
-    public function contact()
-    {
-        return $this->view->render('contact');
-    }
-
     public function listArticles()
     {
         $articles = $this->articleDAO->getAllArticles();

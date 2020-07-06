@@ -23,7 +23,7 @@ if ($this->session->show('error_login')){
 }else
 ?>
 
-<br>S
+<br>
 <h3>Remplissez les champs ci-dessous pour vous connecter</h3><br>
 <div class="container">
     <div class="row">
@@ -50,7 +50,7 @@ if ($this->session->show('error_login')){
                     <button type="submit" class="btn btn-primary rounded" value="Connexion" id="submit" name="submit">Connexion</button>
                 </div>
             </form><br>
-            <p>Pas encore de compte ? Cliquez <a class="btn-outline-danger" href="../public/index.php?route=register">ici</a></p><hr>
+            <p>Pas encore de compte ? Cliquez <a class="badge badge-warning" href="../public/index.php?route=register">ici</a></p><hr>
             <a href="../public/index.php">Retour à l'accueil</a>
         </div>
     </div>

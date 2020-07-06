@@ -29,6 +29,7 @@ class Article
      */
     private $createdAt;
 
+
     /**
      * @return int
      */

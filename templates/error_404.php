@@ -11,5 +11,6 @@
             </div>
         </div>
     </header>
-    <a href="../public/index.php">Retour à l'accueil</a><?php
-?>
+    <div class="container">
+        <a class="btn btn-info rounded" href="../public/index.php">Retour à l'accueil</a>
+    </div>

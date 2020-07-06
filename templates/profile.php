@@ -26,6 +26,9 @@
     <h3>Compte de <?= $this->session->get('pseudo') ?></h3>
 
 <div class="container border rounded pt-4 pb-4">
+    <?php
+    if ($this->session->get('role') === 'user') {
+        ?>
         <div class="container text-center">
             <a href="../public/index.php?route=updatePassword"><button type="button" class="btn btn-outline-warning rounded">Modifier mon mot de passe</button></a><br>
         </div>
@@ -33,6 +36,19 @@
         <div class="container text-center">
             <a href="../public/index.php?route=deleteAccount"><button type="button" class="btn btn-outline-secondary rounded">Supprimer mon compte</button></a>
         </div>
+        <?php
+    }else {
+        ?>
+        <div class="container text-center">
+            <a href="../public/index.php?route=updatePassword"><button type="button" class="btn btn-outline-warning rounded">Modifier mon mot de passe</button></a><br>
+        </div>
+        <br>
+        <div class="container text-center">
+            <a href="../public/index.php?route=administration"><button type="button" class="btn btn-outline-secondary rounded">Espace administration</button></a><br>
+        </div>
+        <?php
+    }
+    ?>
 </div>
 
 <br>

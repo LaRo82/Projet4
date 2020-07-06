@@ -78,9 +78,6 @@ class Router
                 elseif ($route === 'bio'){
                     $this->frontController->bio();
                 }
-                elseif ($route === 'contact'){
-                    $this->frontController->contact();
-                }
                 elseif ($route === 'listArticles'){
                     $this->frontController->listArticles();
                 }
