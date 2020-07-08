@@ -14,10 +14,10 @@
 </header>
 
     <?php
-    if ($this->session->show('update_password')){
+    if ($this->session->get('update_password')){
         ?>
         <div class="container alert alert-success w-25 text-center" role="alert">
-            Votre mot de passe a bien été mis à jour !
+            <?= $this->session->show('update_password') ?>
         </div>
         <?php
     }else

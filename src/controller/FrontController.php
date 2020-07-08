@@ -30,7 +30,7 @@ class FrontController extends Controller
             $errors = $this->validation->validate($post, 'Comment');
             if (!$errors) {
                 $this->commentDAO->addComment($post, $articleId);
-                $this->session->set('add_comment', 'Le nouveau commentaire a bien été ajouté');
+                $this->session->set('add_comment', 'Votre commentaire a bien été ajouté');
                 header('Location: ../public/index.php');
             }
             $article = $this->articleDAO->getArticle($articleId);
@@ -60,7 +60,7 @@ class FrontController extends Controller
             }
             if (!$errors) {
                 $this->userDAO->register($post);
-                $this->session->set('register', 'Votre compte utilisateur a bien été créé, vous pouvez maintenant vous connecter');
+                $this->session->set('register', 'Votre compte utilisateur a bien été créé');
                 header('Location: ../public/index.php');
             }
             return $this->view->render('register', [

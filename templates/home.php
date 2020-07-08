@@ -33,13 +33,19 @@ if ($this->session->show('login')) {
 }elseif ($this->session->get('register')) {
     ?>
     <div class="alert alert-warning" role="alert">
-        <?= $this->session->show('register') ?>
+        <?= $this->session->show('register') ?> Vous pouvez maintenant vous <a class="badge badge-danger" href="../public/index.php?route=login">connecter</a>
     </div>
     <?php
 }elseif ($this->session->get('delete_account')) {
     ?>
     <div class="alert alert-danger" role="alert">
         <?= $this->session->show('delete_account') ?>
+    </div>
+    <?php
+}elseif ($this->session->get('add_comment')) {
+    ?>
+    <div class="alert alert-info" role="alert">
+        <?= $this->session->show('add_comment') ?>
     </div>
     <?php
 }else{

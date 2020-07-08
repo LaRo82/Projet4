@@ -54,7 +54,7 @@ if ($this->session->get('pseudo') && $this->session->get('role') === 'user') {
         <?php
         }else {
     ?>
-        <h4>Vous souhaitez réagir ? <br> Veuillez vous <a class="badge badge-danger" href="../public/index.php?route=login">connecter</a> ou <a class="badge badge-warning" href="../public/index.php?route=register">créez votre compte</a></h4>
+        <h4>Vous souhaitez réagir et émettre un commentaire ? <br> Veuillez vous <a class="badge badge-danger" href="../public/index.php?route=login">connecter</a> ou <a class="badge badge-warning" href="../public/index.php?route=register">créez votre compte</a></h4>
         <?php
 }
 ?>
