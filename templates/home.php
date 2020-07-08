@@ -49,7 +49,6 @@ if ($this->session->show('login')) {
 ?>
 </div>
 
-
 <br>
 <h3><em>Découvrez mes dernieres publications</em></h3>
 <br>
@@ -64,18 +63,24 @@ if ($this->session->show('login')) {
                   <hr>
                   <a href="post.html">
                       <h4 class="post-title">
-                          <a href="../public/index.php?route=article&articleId=<?= htmlspecialchars($article->getId()); ?>"><?= htmlspecialchars($article->getTitle()); ?></a>
+                          <a href="../public/index.php?route=article&articleId=<?= htmlspecialchars($article->getId()); ?>"><ins><?= htmlspecialchars($article->getTitle()); ?></a>
                       </h4>
-                          <?= $article->getContent();?>
+                      <?= substr($article->getContent(), 0, 500);?>...
+                      <br>
+                      <div class="container text-right">
+                          <a href="../public/index.php?route=article&articleId=<?= htmlspecialchars($article->getId()); ?>">Lire la suite...</a>
+                      </div>
                   </a>
+
                   <p class="post-meta">Créé le : <?= htmlspecialchars($article->getCreatedAt());?></p>
+
               </div>
                 <?php
             }
             ?>
-              <hr>
-          </div>
+            <hr>
         </div>
-      </div>
+    </div>
+</div>
 
 

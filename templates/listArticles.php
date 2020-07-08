@@ -15,7 +15,7 @@
 </header>
 
 
-<h3 class="container text-center">Vous trouverez ici l'ensemble des publication de mon dernier ouvrage qui est un hommage à la solitude et aux grands espaces. Je poste régulièrement mes inspirations en tenant compte de vos remarques faites en commentaire.</h3>
+<h3 class="container text-center">Vous trouverez ici l'ensemble des publication de mon dernier ouvrage qui est un hommage à la solitude et aux grands espaces.<br>Je poste régulièrement mes inspirations en tenant compte de vos remarques faites en commentaire.</h3>
 <br>
 <div class="container">
     <div class="row">
@@ -28,7 +28,7 @@
                     <hr>
                     <a href="post.html">
                         <h4 class="post-title">
-                            <a href="../public/index.php?route=article&articleId=<?= htmlspecialchars($article->getId());?>"><?= htmlspecialchars($article->getTitle());?></a>
+                            <a href="../public/index.php?route=article&articleId=<?= htmlspecialchars($article->getId());?>"><ins><?= htmlspecialchars($article->getTitle());?></a>
                         </h4>
                         <p>
                             <?= $article->getContent();?>

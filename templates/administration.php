@@ -76,7 +76,7 @@
         ?>
         <tr>
             <td class="align-middle"><a href="../public/index.php?route=article&articleId=<?= htmlspecialchars($article->getId());?>"><?= htmlspecialchars($article->getTitle());?></a></td>
-            <td class="align-middle"><?= substr($article->getContent(), 0, 220);?></td>
+            <td class="align-middle"><?= substr($article->getContent(), 0, 220);?>...</td>
             <td class="align-middle"><?= htmlspecialchars($article->getAuthor());?></td>
             <td class="align-middle">Créé le : <?= htmlspecialchars($article->getCreatedAt());?></td>
             <td class="align-middle">
@@ -138,7 +138,6 @@ if (count($comments)>=1) {
 <table class="table">
     <thead class="thead-dark">
         <tr>
-            <th scope="col">Id</td>
             <th scope="col">Pseudo</td>
             <th scope="col">Date</td>
             <th scope="col">Rôle</td>
@@ -150,7 +149,6 @@ if (count($comments)>=1) {
     {
         ?>
         <tr>
-            <td class="align-middle"><?= htmlspecialchars($user->getId());?></td>
             <td class="align-middle"><?= htmlspecialchars($user->getPseudo());?></td>
             <td class="align-middle">Créé le : <?= htmlspecialchars($user->getCreatedAt());?></td>
             <td class="align-middle"><?= htmlspecialchars($user->getRole());?></td>
